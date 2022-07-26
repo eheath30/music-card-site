@@ -4,7 +4,6 @@ import Main from "./main/main";
 import Image from "./image/image";
 // import List from "./list/list";
 import "../App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import SongCard from "./SongCard";
 import Hr from './hr/hr'
 
