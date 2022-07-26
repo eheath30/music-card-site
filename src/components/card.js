@@ -67,7 +67,7 @@ const Card = () => {
 
           return (
           <div className="mx-5 py-2">
-            <SongCard key={index} song={song}/>
+            <SongCard key={index} song={song} name={artist.name}/>
           </div>
           )
         })}
