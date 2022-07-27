@@ -4,10 +4,10 @@ const axios = require("axios").default;
 
 const SongCard = ({ songName, song, name, releasedate, songimage }) => {
   const [lyrics, setLyrics] = useState("");
-  const [show, setShow] = useState("");
+  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow("modal");
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow("modal");
 
   const songNameUrl = songName.replace(/ /g, "%20");
   const artistNameUrl = name.replace(/ /g, "%20");
@@ -27,9 +27,8 @@ const SongCard = ({ songName, song, name, releasedate, songimage }) => {
   }
 
   async function handleClick(e) {
-    console.log("I am being clicked1!");
-    setShow("modal");
-
+    console.log("FETCHING LYRICS!");
+    setShow(true);
     await getLyrics();
   }
 
@@ -40,7 +39,7 @@ const SongCard = ({ songName, song, name, releasedate, songimage }) => {
       <button
         type="button"
         className="mx-auto border-0 bg-light"
-        data-toggle={show}
+        // data-toggle={show}
         data-target="#exampleModalCenter"
         onClick={handleClick}
       >
