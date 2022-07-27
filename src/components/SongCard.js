@@ -3,24 +3,26 @@ const axios = require('axios').default;
 
 
 const SongCard = ({ song, name }) => {
+
+    const [ lyrics, setLyrics ] = useState([])
+
     // {console.log(song)}
     // {console.log(name)}
 
     const songNameUrl = song.name.replace(/ /g,"%20");
     const artistNameUrl = name.replace(/ /g,"%20");
 
-    const [ lyrics, setLyrics ] = useState('')
+
 
 
     async function getLyrics() {
         try {
           console.log("Trying to get lyrics");
           const url = `https://api.lyrics.ovh/v1/${artistNameUrl}/${songNameUrl}`;
-          console.log(url);
-          const response = await axios.get();
-          const data = response.json();
-          getLyrics(data);
-          console.log(data, "This is the response");
+        // const url = 'https://api.punkapi.com/v2/beers'
+          const response = await axios.get(url);
+          let data = response.data.lyrics
+          setLyrics(data);
         } catch (error) {
           console.error(error);
         }
@@ -41,13 +43,13 @@ const SongCard = ({ song, name }) => {
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">{song.name}</h5>
                 <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                {lyrics}
             </div>
             </div>
         </div>
