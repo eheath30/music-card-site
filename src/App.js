@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
+import { AboutPage, IndexPage, NewCardPage } from './pages';
+import Layout from "./layouts";
 import Card from "./components/card"
 import './App.css';
 
@@ -6,7 +9,20 @@ import './App.css';
 
 const App = () => {
     return (
-        <Card />
+        <Routes>
+            <Route path="/" element={<Layout/>}>
+            <Route path="/" element={<IndexPage/>}></Route>
+            <Route path="/about" element={<AboutPage/>}></Route>
+            <Route path="/newcardpage" element={<NewCardPage/>}></Route>
+            <Route path="/artists" element={<Card/>}></Route>
+
+            {/* <Route path="/users" >
+                <Route path="/users" element={<UsersPage/>}></Route>
+                <Route path=":userName" element={<UserPage/>}></Route>
+            </Route> */}
+        </Route>
+        </Routes>
+        // <Card />
     );
 
 }

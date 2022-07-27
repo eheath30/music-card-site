@@ -50,3 +50,8 @@ body {
 .line {
   border-bottom: 1px solid #282c34;
 }
+
+.mode {
+  height: 20rem;
+  overflow: scroll;
+}
