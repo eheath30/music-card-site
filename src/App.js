@@ -4,11 +4,12 @@ import { AboutPage, IndexPage, NewCardPage } from './pages';
 import Layout from "./layouts";
 import Card from "./components/card"
 import './App.css';
-
+import { ArtistProvider } from '../src/ArtistContext'
 
 
 const App = () => {
     return (
+        <ArtistProvider>
         <Routes>
             <Route path="/" element={<Layout/>}>
             <Route path="/" element={<IndexPage/>}></Route>
@@ -22,7 +23,7 @@ const App = () => {
             </Route> */}
         </Route>
         </Routes>
-        // <Card />
+        </ArtistProvider>
     );
 
 }
