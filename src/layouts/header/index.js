@@ -1,15 +1,21 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 
 function Header() {
+    const navigate = useNavigate();
+
+
+
     return (
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/artists">Artists</Link>
-            <Link to="/newcardpage">New Artist</Link>
+        <nav className='nav navbar-fixed-top bg-light shadow rounded justify-content-center align-items-center'>
+            <NavLink className={({ isActive }) => (isActive ? 'selected nav-link text-dark navItem' : 'nav-link text-dark navItem')} to="/">Home</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'selected nav-link text-dark navItem' : 'nav-link text-dark navItem')} to="/about">About</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'selected nav-link text-dark navItem' : 'nav-link text-dark navItem')} to="/artists">Artists</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'selected nav-link text-dark navItem' : 'nav-link text-dark navItem')} to="/newcardpage">New Artist</NavLink>
+            <button className="btn btn-danger btn-lg position-fixed end-0 mx-3" onClick={()=>navigate(-1)}>Back</button>
         </nav>
     )
 }
+
 
 export default Header;

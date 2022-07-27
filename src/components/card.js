@@ -57,7 +57,7 @@ const Card = () => {
   const renderArtists = () =>
     artists.map((artist, index) => (
       <>
-      <div className="card m-5 p-2 mainCard shadow ">
+      <div className="card mx-auto my-3 p-2 mainCard shadow ">
         <Image key={index} alt={artist.name} artistimage={artist.artistimage} />
         <Header key={index} name={artist.name} genre={artist.genre} />
         <Main key={index} description={artist.description} />
