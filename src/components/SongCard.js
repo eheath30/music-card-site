@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Modal from "./modal/Modal";
 const axios = require("axios").default;
 
-const SongCard = ({ songName, song, name, releasedate, songimage }) => {
+const SongCard = ({ songName, song, name, releasedate, songimage, yturl}) => {
   const [lyrics, setLyrics] = useState("");
   const [show, setShow] = useState(false);
 
@@ -49,12 +49,14 @@ const SongCard = ({ songName, song, name, releasedate, songimage }) => {
           className="album-photo mx-auto mb-3 shadow"
         />
       </button>
+      {console.log(yturl, "This is the yturl in the songcard!")}
       <Modal
         songLyrics={lyrics}
         setLyrics={setLyrics}
         songName={songName}
         show={show}
         setShow={setShow}
+        yturl={yturl}
       />
     </div>
   );

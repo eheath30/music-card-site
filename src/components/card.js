@@ -28,6 +28,7 @@ const Card = () => {
           <Main key={Math.random() * 100} description={artist.description} />
 
           {artist.songs.map((song) => {
+            {console.log(song.songurl, "This is the yturl in card")}
             return (
               <div className="mx-5 py-2">
                 <SongCard
@@ -36,6 +37,7 @@ const Card = () => {
                   releasedate={song.releasedate}
                   songimage={song.albumimage}
                   name={artist.name}
+                  yturl={song.songurl}
                 />
               </div>
             );

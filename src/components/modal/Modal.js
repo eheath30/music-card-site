@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-const Modal = ({ songLyrics, setLyrics, songName, show, setShow }) => {
+const Modal = ({ songLyrics, setLyrics, songName, show, setShow, yturl }) => {
   function closeModal() {
     setLyrics("");
     setShow(false);
   }
 
-
 // change youtube url to embeded url for embedding
-let url= "https://www.youtube.com/watch?v=kXYiU_JCYtU"
+let url = "";
+if (yturl.includes("&")) {
+  url = yturl.split('&')[0]
+} else {
+  url = yturl
+}
 
 let embededURL = url.replace("watch?v=", "embed/")
 
