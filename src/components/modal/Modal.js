@@ -16,8 +16,6 @@ if (yturl.includes("&")) {
 
 let embededURL = url.replace("watch?v=", "embed/")
 
-console.log(embededURL)
-
 
 
 
