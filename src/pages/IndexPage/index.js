@@ -5,7 +5,6 @@ import { ArtistContext } from '../../ArtistContext';
 
 const IndexPage = () => {
   const [artist, setArtist] = useContext(ArtistContext);
-  console.log(artist);
   return (
     <div>
       <div className="position-relative overflow-hidden p-3 p-md-5 m-3 text-center bg-light">

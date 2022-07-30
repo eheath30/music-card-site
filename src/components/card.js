@@ -43,6 +43,7 @@ const Card = () => {
             );
           })}
           <section className="container mx-auto text-center w-50">
+
         <AddSongModal
                           key={Math.random() * 100}
                           name={artist.name}
