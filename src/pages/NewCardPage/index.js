@@ -27,7 +27,7 @@ const NewCardPage = () => {
 
     function handleSubmit (e) {
         e.preventDefault();
-        setArtist(artist => [...artist, {artistimage: image, name: name, genre: genre, description: description, id: (artist.length + 1), songs: []}])
+        setArtist(prevArtist => [...prevArtist, {artistimage: image, name: name, genre: genre, description: description, id: (artist.length + 1), songs: []}])
         document.getElementById("submitArtistForm").reset();
     }
 

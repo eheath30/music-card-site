@@ -11,7 +11,7 @@ import AddSongModal from "./addsongmodal/addsongmodal";
 const Card = () => {
   const [artists, setArtists] = useContext(ArtistContext);
   const [song, setSong] = useState("");
-
+  const [rerender, setRerender] = useState(false);
   const renderArtists = () =>
     artists.map((artist) => (
       <>
@@ -47,7 +47,10 @@ const Card = () => {
         <AddSongModal
                           key={Math.random() * 100}
                           name={artist.name}
-                          yturl={song.songurl}/>
+                          yturl={song.songurl}
+                          rerender={rerender}
+                          setRerender={setRerender}
+                          />
                           </section>
         </div>
         <div className="justify-content-center w-100">

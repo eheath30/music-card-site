@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { ArtistContext } from '../../ArtistContext';
 
 
-export default function AddSongModal({name}) {
+export default function AddSongModal({name, rerender, setRerender}) {
   const [show, setShow] = useState(false);
   const [ songName, setSongName ] = useState('');
   const [ ReleaseDate, setReleaseDate ] = useState('');
@@ -10,6 +10,7 @@ export default function AddSongModal({name}) {
   const [ YoutubeURL, setYoutubeURL ] = useState('');
 
   const [artist, setArtist] = useContext(ArtistContext);
+const artists = artist;
 
   async function handleClick(e) {
     setShow(true);
@@ -19,42 +20,34 @@ export default function AddSongModal({name}) {
   }
 
 
-  function handleSongName (e) {
-    setSongName(e.target.value);
+  function handleSongName (e) { setSongName(e.target.value); }
+
+function handleReleaseDate (e) { setReleaseDate(e.target.value); }
+
+function handleAlbumArt (e) { setAlbumArt(e.target.value); }
+
+function handleYoutubeURL (e) { setYoutubeURL(e.target.value); }
+
+
+function handleSubmit (e) {
+  e.preventDefault();
+  let artistSelected = e.target.id
+
+  const newSong = {
+    name: songName,
+    releasedate: ReleaseDate,
+    songurl: YoutubeURL,
+    albumimage: AlbumArt
+  }
+
+  for (let i = 0; i < artists.length; i++) {
+    if (artists[i].name === artistSelected) {
+    artists[i].songs.push(newSong)
+  }
+    }
+     setArtist(artists)
+     setRerender(!rerender);
 }
-
-function handleReleaseDate (e) {
-    setReleaseDate(e.target.value);
-}
-
-function handleAlbumArt (e) {
-    setAlbumArt(e.target.value);
-}
-
-function handleYoutubeURL (e) {
-  setYoutubeURL(e.target.value);
-}
-
-
-// function handleSubmit (e) {
-//   e.preventDefault();
-//   console.log(artist);
-//   setArtist(artist => [...artist, {albumimage: image, name: songName, genre: genre, description: description, id: (artist.length + 1), songs: []}])
-//   document.getElementById("submitArtistForm").reset();
-// }
-
-// function handleSubmit (e) {
-//   e.preventDefault();
-//   // console.log(artist);
-//   setArtist(artist => artist.songs({
-//     ...artist.songs,
-//     albumimage: AlbumArt,
-//     name: songName,
-//     releasedate: ReleaseDate,
-//     songurl: YoutubeURL
-//   }))
-// }
-
 
   return (
     <div className="card justify-center my-2">
@@ -80,26 +73,26 @@ function handleYoutubeURL (e) {
         <form className="form-group w-50  mx-auto">
             <label>Song Name</label>
             <input type="text" className="form-control"
-            // onChange={handleSongName}
+            onChange={handleSongName}
               ></input>
             <br />
             <label>Release Date</label>
             <input type="text" className="form-control"
-            // onChange={handleReleaseDate}
+            onChange={handleReleaseDate}
               ></input>
             <br />
             <label>Album art</label>
             <input type="text" className="form-control"
-            // onChange={handleAlbumArt}
+            onChange={handleAlbumArt}
               ></input>
             <br />
             <label>Youtube url</label>
             <input type="text"
-            // onChange={handleYoutubeURL}
+            onChange={handleYoutubeURL}
               className="form-control"></input>
             <br />
-            <button
-            // onClick={handleSubmit}
+            <button id={name}
+            onClick={handleSubmit}
              className="btn btn-primary">Submit Artist</button>
         </form>
 
