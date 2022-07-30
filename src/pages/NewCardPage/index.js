@@ -34,21 +34,22 @@ const NewCardPage = () => {
 
 
     return (
-<div>
-        <form>
+<div className="container mx-auto py-5">
+    <h1 className="display-4 text-center pb-5">Add a new Artist!</h1>
+        <form className="form-group w-50  mx-auto">
             <label>Name</label>
-            <input type="text" onChange={handleName}></input>
+            <input type="text" onChange={handleName} className="form-control"></input>
             <br />
             <label>Image</label>
-            <input type="text" onChange={handleImage}></input>
+            <input type="text" onChange={handleImage} className="form-control"></input>
             <br />
             <label>Genre</label>
-            <input type="text" onChange={handleGenre}></input>
+            <input type="text" onChange={handleGenre} className="form-control"></input>
             <br />
             <label>Description</label>
-            <input type="text" onChange={handleDescription}></input>
+            <input type="text" onChange={handleDescription} className="form-control"></input>
             <br />
-            <button onClick={handleSubmit}>Submit Artist</button>
+            <button type="submit" onClick={handleSubmit} className="btn btn-primary">Submit Artist</button>
         </form>
     </div>
     )

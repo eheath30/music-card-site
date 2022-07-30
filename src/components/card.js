@@ -6,6 +6,7 @@ import "../App.css";
 import SongCard from "./SongCard";
 import Hr from "./hr/hr";
 import { ArtistContext } from "../ArtistContext";
+import AddSongModal from "./addsongmodal/addsongmodal";
 
 const Card = () => {
   const [artists, setArtists] = useContext(ArtistContext);
@@ -28,7 +29,6 @@ const Card = () => {
           <Main key={Math.random() * 100} description={artist.description} />
 
           {artist.songs.map((song) => {
-            {console.log(song.songurl, "This is the yturl in card")}
             return (
               <div className="mx-5 py-2">
                 <SongCard
@@ -42,6 +42,12 @@ const Card = () => {
               </div>
             );
           })}
+          <section className="container mx-auto text-center w-50">
+        <AddSongModal
+                          key={Math.random() * 100}
+                          name={artist.name}
+                          yturl={song.songurl}/>
+                          </section>
         </div>
         <div className="justify-content-center w-100">
           <Hr />

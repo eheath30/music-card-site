@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ArtistContext } from '../../ArtistContext';
 const Modal = ({ songLyrics, setLyrics, songName, show, setShow, yturl }) => {
+  const [artist, setArtist] = useContext(ArtistContext);
+
+
   function closeModal() {
     setLyrics("");
     setShow(false);

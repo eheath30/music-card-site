@@ -46,7 +46,7 @@ const SongCard = ({ songName, song, name, releasedate, songimage, yturl}) => {
         <img
           src={songimage}
           alt="cover-art"
-          className="album-photo mx-auto mb-3 shadow"
+          className="img img-fluid album-photo mx-auto h-auto mb-3 shadow"
         />
       </button>
       {/* {console.log(yturl, "This is the yturl in the songcard!")} */}
