@@ -19,7 +19,7 @@ const SongCard = ({ songName, song, name, releasedate, songimage, yturl}) => {
       const response = await axios.get(url);
       setLyrics(response.data.lyrics);
 
-      console.log(response.data.lyrics);
+      // console.log(response.data.lyrics);
     } catch (error) {
       console.error(error);
       setLyrics("Loading Error :(!");
@@ -27,7 +27,7 @@ const SongCard = ({ songName, song, name, releasedate, songimage, yturl}) => {
   }
 
   async function handleClick(e) {
-    console.log("FETCHING LYRICS!");
+    // console.log("FETCHING LYRICS!");
     setShow(true);
     await getLyrics();
   }
@@ -49,7 +49,7 @@ const SongCard = ({ songName, song, name, releasedate, songimage, yturl}) => {
           className="album-photo mx-auto mb-3 shadow"
         />
       </button>
-      {console.log(yturl, "This is the yturl in the songcard!")}
+      {/* {console.log(yturl, "This is the yturl in the songcard!")} */}
       <Modal
         songLyrics={lyrics}
         setLyrics={setLyrics}
