@@ -8,7 +8,7 @@ const IndexPage = () => {
   console.log(artist);
   return (
     <div>
-      <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+      <div className="position-relative overflow-hidden p-3 p-md-5 m-3 text-center bg-light">
         <div className="col-md-5 p-lg-5 mx-auto my-5">
           <h1 className="display-4 font-weight-normal">Reece's Pieces</h1>
           <p className="lead font-weight-normal">
@@ -23,8 +23,9 @@ const IndexPage = () => {
         <div className="product-device product-device-2 box-shadow d-none d-md-block"></div>
       </div>
 
-      <div className="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 row">
-        <div className="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden col">
+      <div className="container-fluid d-md-flex flex-md-equal w-100 my-md-3 my-3 px-md-3 mx-auto">
+
+        <div className="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
           <div className="my-3 py-3">
             <h2 className="display-5">{artist[0].name}</h2>
             <p className="lead">{artist[0].description}</p>
@@ -33,14 +34,16 @@ const IndexPage = () => {
         </div>
 
 
-        <div className="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden col">
+        <div className="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
           <div className="my-3 p-3 ">
             <h2 className="display-5">{artist[2].name}</h2>
             <p className="lead">{artist[2].description}</p>
           </div>
           <img className="img-responsive w-75 mx-auto pb-5" src={artist[2].artistimage} alt={artist[0].name} />
         </div>
+
       </div>
+
     </div>
   );
 };

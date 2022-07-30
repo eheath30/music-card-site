@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ArtistContext } from '../../ArtistContext';
 
-export default function AddSongModal() {
+
+export default function AddSongModal({name}) {
   const [show, setShow] = useState(false);
+  const [artist, setArtist] = useContext(ArtistContext);
+
 
   async function handleClick(e) {
-    // console.log("FETCHING LYRICS!");
     setShow(true);
   }
 
@@ -32,7 +35,7 @@ export default function AddSongModal() {
           </span>
 
           <div className="container mx-auto py-5">
-    <h1 className="display-4 text-center pb-5">Add a new Song by this Artist!</h1>
+    <h1 className="display-4 text-center pb-5">Add a new Song by {name}!</h1>
         <form className="form-group w-50  mx-auto">
             <label>Song Name</label>
             <input type="text" className="form-control"></input>

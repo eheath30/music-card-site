@@ -29,14 +29,15 @@ const NewCardPage = () => {
         e.preventDefault();
         console.log(artist);
         setArtist(artist => [...artist, {artistimage: image, name: name, genre: genre, description: description, id: (artist.length + 1), songs: []}])
+        document.getElementById("submitArtistForm").reset();
     }
 
 
 
     return (
-<div className="container mx-auto py-5">
+<div className="container card mx-auto py-5 my-5 shadow-sm">
     <h1 className="display-4 text-center pb-5">Add a new Artist!</h1>
-        <form className="form-group w-50  mx-auto">
+        <form className="form-group w-50  mx-auto" id="submitArtistForm">
             <label>Name</label>
             <input type="text" onChange={handleName} className="form-control"></input>
             <br />
