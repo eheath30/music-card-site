@@ -13,16 +13,14 @@ const App = () => {
         <ArtistProvider>
         <Routes>
             <Route path="/" element={<Layout/>}>
-            <Route path="/" element={<IndexPage/>}></Route>
-            <Route path="/about" element={<AboutPage/>}></Route>
-            <Route path="/newcardpage" element={<NewCardPage/>}></Route>
-            <Route path="/artists" element={<Card/>}></Route>
-            <Route path="/search" element={<SearchArtist/>}></Route>
-            {/* <Route path="/users" >
-                <Route path="/users" element={<UsersPage/>}></Route>
-                <Route path=":userName" element={<UserPage/>}></Route>
-            </Route> */}
-        </Route>
+                <Route path="/" element={<IndexPage/>}></Route>
+                <Route path="/about" element={<AboutPage/>}></Route>
+                <Route path="/newcardpage" element={<NewCardPage/>}></Route>
+                <Route path="/artists" element={<Card/>}/>
+                <Route path="/search" element={<SearchArtist/>}/>
+                <Route path="*" element={<IndexPage/>}/>
+
+            </Route>
         </Routes>
         </ArtistProvider>
     );
