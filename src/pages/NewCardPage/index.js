@@ -34,7 +34,7 @@ const NewCardPage = () => {
 
 
     return (
-<div className="container card mx-auto py-5 my-5 shadow-sm">
+<div className="container card mx-auto py-5 my-5 shadow-sm h-100">
     <h1 className="display-4 text-center pb-5">Add a new Artist!</h1>
         <form className="form-group w-50  mx-auto" id="submitArtistForm">
             <label>Name</label>

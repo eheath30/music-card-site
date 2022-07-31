@@ -23,17 +23,22 @@ let embededURL = url.replace("watch?v=", "embed/")
 
 
   return (
-    <div id="myModal" className={`modal  ${show ? "showModal" : "hideModal"}`}>
+    <div id="myModal" className={`modal songModal ${show ? "showModal" : "hideModal"}`}>
       <div class="modal-content">
         <span onClick={closeModal} class="close">
           &times;
         </span>
         <span className="display-4 mx-auto">{songName}</span>
-        <iframe className="mx-auto my-4 rounded" width="560" height="315" src={embededURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 className="container display5 text-center">Lyrics</h2>
-        <div className="container text-center">{songLyrics}</div>
+        <div className="container">
+        <iframe className="mx-auto my-4 rounded video" width="560" height="315" src={embededURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h2 className="display5 text-center mt-5">Lyrics</h2>
+
+        <div className="container text-center mb-5 lyrics-in-the-modal h-100">{songLyrics}</div>
+
       </div>
     </div>
+
   );
 };
 
