@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ArtistContext } from '../../ArtistContext';
-const Modal = ({ songLyrics, setLyrics, songName, show, setShow, yturl }) => {
+
+
+const Modal = ({ songLyrics, setLyrics, songName, show, setShow, yturl, loading}) => {
   const [artist, setArtist] = useContext(ArtistContext);
 
 
@@ -19,7 +21,7 @@ if (yturl.includes("&")) {
 
 let embededURL = url.replace("watch?v=", "embed/")
 
-
+let loadingGiphy = <iframe src="https://c.tenor.com/0iK9a1WkT40AAAAC/loading-white.gif" width="500" height="600" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 
   return (
@@ -34,7 +36,7 @@ let embededURL = url.replace("watch?v=", "embed/")
         </div>
         <h2 className="display5 text-center mt-5">Lyrics</h2>
 
-        <div className="container text-center mb-5 lyrics-in-the-modal h-100">{songLyrics}</div>
+        <div className="container text-center mb-5 lyrics-in-the-modal h-100">{loading ? loadingGiphy : songLyrics}</div>
 
       </div>
     </div>
