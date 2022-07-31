@@ -13,7 +13,7 @@ const IndexPage = () => {
           <p className="lead font-weight-normal">
             A global community where users can add share and listen to their favourite music, anywhere, anytime.
           </p>
-          <a className="btn btn-lg btn-outline-secondary" href="https:/reeces-pieces.netlify.app/artists">
+          <a className="btn btn-lg btn-outline-secondary" href="/artists">
             Enter
           </a>
         </div>

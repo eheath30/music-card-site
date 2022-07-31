@@ -168,5 +168,14 @@ body {
 
 .navSearchBtn {
   height:48px;
-    width:92px;
+    width:90px;
+}
+
+
+
+  @media screen and (min-width: 768px) {
+    .searchForm {
+        width: 50%;
+        margin: auto;
+    }
 }

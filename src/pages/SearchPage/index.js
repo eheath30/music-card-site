@@ -81,9 +81,9 @@ export default function SearchArtist() {
     <>
       <section className="container mx-auto text-center py-5">
         <h1 className="display-4">Search for an Existing Artist.</h1>
-        <div className="container mx-auto w-50 py-5">
+        <div className="container mx-auto py-5">
           <div className="container-fluid">
-            <form className="d-flex">
+            <form className="d-flex flex=column searchForm">
               <input
                 className="form-control me-2"
                 type="search"
