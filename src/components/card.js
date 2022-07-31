@@ -7,11 +7,20 @@ import SongCard from "./SongCard";
 import Hr from "./hr/hr";
 import { ArtistContext } from "../ArtistContext";
 import AddSongModal from "./addsongmodal/addsongmodal";
+const LOCAL_STORAGE_KEY = 'musicApp.artists'
 
 const Card = () => {
   const [artists, setArtists] = useContext(ArtistContext);
   const [song, setSong] = useState("");
-  const [rerender, setRerender] = useState(false);
+
+  useEffect(() => {
+    const storedArtists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storedArtists) setArtists(storedArtists)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(artists))
+  }, [artists])
 
 
   const renderArtists = () =>
