@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 import { AboutPage, IndexPage, NewCardPage } from './pages';
 import Layout from "./layouts";
 import Card from "./components/card"
+import SearchArtist from "./pages/SearchPage/index"
 import './App.css';
 import { ArtistProvider } from '../src/ArtistContext'
 
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/about" element={<AboutPage/>}></Route>
             <Route path="/newcardpage" element={<NewCardPage/>}></Route>
             <Route path="/artists" element={<Card/>}></Route>
+            <Route path="/search" element={<SearchArtist/>}></Route>
             {/* <Route path="/users" >
                 <Route path="/users" element={<UsersPage/>}></Route>
                 <Route path=":userName" element={<UserPage/>}></Route>

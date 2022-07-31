@@ -1,36 +1,30 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState} from "react";
+// todo: should use useEffect and useRef in project somehow
 import Modal from "./modal/Modal";
 const axios = require("axios").default;
 
-const SongCard = ({ songName, song, name, releasedate, songimage, yturl}) => {
+const SongCard = ({ songName, song, name, releasedate, songimage, yturl }) => {
   const [lyrics, setLyrics] = useState("");
   const [show, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow("modal");
-
   const songNameUrl = songName.replace(/ /g, "%20");
   const artistNameUrl = name.replace(/ /g, "%20");
 
   async function getLyrics() {
     try {
-      // const url = `https://api.punkapi.com/v2/beers`;
       const url = `https://api.lyrics.ovh/v1/${artistNameUrl}/${songNameUrl}`;
       const response = await axios.get(url);
       setLyrics(response.data.lyrics);
-
-      // console.log(response.data.lyrics);
     } catch (error) {
       console.error(error);
-      setLyrics("Loading Error :(!");
+      setLyrics("❌ Loading Error ❌ (The API can take a long time to get the lyrics)");
     }
   }
 
   async function handleClick(e) {
-    // console.log("FETCHING LYRICS!");
     setShow(true);
     await getLyrics();
   }
+
 
   return (
     <div className="card justify-center">
