@@ -164,3 +164,9 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+.navSearchBtn {
+  height:48px;
+    width:92px;
+}

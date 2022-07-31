@@ -22,11 +22,10 @@ export default function SearchArtist() {
     setSearchTerm(e.target.value);
   }
 
-
   const renderArtists = () =>
     artist.map((artist) => (
-      <>
-        {artist.name.toLowerCase() == searchTerm.toLowerCase() && (
+        <>
+        {artist.name === searchTerm && (
           <>
             <div className="card mx-auto my-3 p-2 mainCard shadow ">
               <Image
@@ -58,6 +57,7 @@ export default function SearchArtist() {
               </div>
             );
           })}
+
           <section className="container mx-auto text-center w-50">
 
         <AddSongModal
@@ -74,7 +74,7 @@ export default function SearchArtist() {
             </div>
           </>
         )}
-      </>
+        </>
     ));
 
   return (
@@ -92,7 +92,7 @@ export default function SearchArtist() {
                 onChange={handleSearchTerm}
               />
               <button
-                className="btn btn-outline-success"
+                className="btn btn-lg btn-outline-success"
                 onClick={submitArtistSearch}
               >
                 Search
