@@ -29,7 +29,7 @@ let embededURL = url.replace("watch?v=", "embed/")
           &times;
         </span>
         <span className="display-4 mx-auto">{songName}</span>
-        <div className="container">
+        <div className="containerInModal">
         <iframe className="mx-auto my-4 rounded video" width="560" height="315" src={embededURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h2 className="display5 text-center mt-5">Lyrics</h2>

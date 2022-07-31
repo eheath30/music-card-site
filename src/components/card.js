@@ -50,8 +50,6 @@ const Card = () => {
                           key={Math.random() * 100}
                           name={artist.name}
                           yturl={song.songurl}
-                          rerender={rerender}
-                          setRerender={setRerender}
                           />
                           </section>
         </div>

@@ -2,15 +2,14 @@ import React, { useState, useContext } from "react";
 import { ArtistContext } from '../../ArtistContext';
 
 
-export default function AddSongModal({name, rerender, setRerender}) {
+export default function AddSongModal({name}) {
   const [show, setShow] = useState(false);
   const [ songName, setSongName ] = useState('');
   const [ ReleaseDate, setReleaseDate ] = useState('');
   const [ AlbumArt, setAlbumArt ] = useState('');
   const [ YoutubeURL, setYoutubeURL ] = useState('');
-
   const [artist, setArtist] = useContext(ArtistContext);
-const artists = artist;
+
 
   async function handleClick(e) {
     setShow(true);
@@ -40,13 +39,11 @@ function handleSubmit (e) {
     albumimage: AlbumArt
   }
 
-  for (let i = 0; i < artists.length; i++) {
-    if (artists[i].name === artistSelected) {
-    artists[i].songs.push(newSong)
-  }
-    }
-     setArtist(artists)
-     setRerender(!rerender);
+  const newArtists = [...artist]
+  const artists = newArtists.find(singleArtist => singleArtist.name === name);
+  artists.songs = [...artists.songs, newSong]
+  setArtist(newArtists);
+
 }
 
   return (
@@ -63,7 +60,7 @@ function handleSubmit (e) {
         id="myModal"
         className={`modal  ${show ? "showModal" : "hideModal"}`}
       >
-        <div class="modal-content">
+        <div class="modal-content addSongCard">
           <span onClick={closeModal} class="close">
             &times;
           </span>

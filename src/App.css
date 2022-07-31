@@ -165,7 +165,7 @@ body {
   cursor: pointer;
 }
 
-.container {
+.containerInModal {
   position: relative;
   width: 100%;
   height: 0;
@@ -202,4 +202,9 @@ body {
 
 .songModal {
   height: 1000px;
+}
+
+
+.addSongCard {
+  height: 100vh;
 }
