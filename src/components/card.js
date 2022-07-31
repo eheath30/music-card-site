@@ -12,6 +12,8 @@ const Card = () => {
   const [artists, setArtists] = useContext(ArtistContext);
   const [song, setSong] = useState("");
   const [rerender, setRerender] = useState(false);
+
+
   const renderArtists = () =>
     artists.map((artist) => (
       <>

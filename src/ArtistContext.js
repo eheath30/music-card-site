@@ -12,7 +12,8 @@ import React, {createContext, useState} from 'react';
         songs: [
           {name: "In the end", releasedate: "2001", songurl: "https://www.youtube.com/watch?v=eVTXPUF4Oz4&ab_channel=LinkinPark", albumimage: "https://www.factinate.com/wp-content/uploads/2017/07/In-the-End.jpg"}
           ,
-          {name: "Numb", releasedate: "2003", songurl: "https://www.youtube.com/watch?v=kXYiU_JCYtU", albumimage: "https://images.genius.com/96b71b235c8bd246a46d75deba3ac149.1000x960x1.jpg"}
+          {name: "Numb", releasedate: "2003", songurl: "https://www.youtube.com/watch?v=kXYiU_JCYtU", albumimage: "https://images.genius.com/96b71b235c8bd246a46d75deba3ac149.1000x960x1.jpg"},
+          {name: "Talking To Myself", releasedate: "2017", songurl: "https://www.youtube.com/watch?v=lvs68OKOquM", albumimage: "https://ligadoamusica.com.br/wp-content/uploads/2017/12/Talking-To-Myself-Linkin-Park-clipe-1024x683.jpg"}
         ],
       },
 
@@ -40,6 +41,19 @@ import React, {createContext, useState} from 'react';
           {name: "On My Way", releasedate: "2015", songurl: "https://www.youtube.com/watch?v=opxhEVjNvdk", albumimage: "https://upload.wikimedia.org/wikipedia/en/5/56/On_My_Way_Axwell_Ingrosso.jpg"}
           ,
           {name: "Sun is Shining", releasedate: "2014", songurl: "https://www.youtube.com/watch?v=nbXgHAzUWB0", albumimage: "https://i.ytimg.com/vi/9w-VOLsaDLE/maxresdefault.jpg"}
+        ],
+      },
+      {
+        artistimage: "https://www.gannett-cdn.com/presto/2019/08/02/PDTN/870e01ae-9339-48a1-af27-578f794ad7f2-sheeran-ed.jpg?crop=3634,2045,x0,y168&width=3200&height=1680&fit=bounds",
+        name: "Ed Sheeran",
+        genre: "Pop",
+
+        description: `Edward Christopher Sheeran MBE (born 17 February 1991) is an English singer-songwriter. Born in Halifax, West Yorkshire and raised in Framlingham, Suffolk, he began writing songs around the age of eleven. In early 2011, Sheeran independently released the extended play, No. 5 Collaborations Project. He signed with Asylum Records the same year.`,
+
+        songs: [
+          {name: "Sing", releasedate: "2014", songurl: "https://www.youtube.com/watch?v=tlYcUqEPN58", albumimage: "https://i.pinimg.com/originals/53/19/dc/5319dcccb6484d79056c403691e7893b.jpg"}
+          ,
+          {name: "You Need Me, I Don't Need You", releasedate: "2010", songurl: "https://www.youtube.com/watch?v=ZXvzzTICvJs", albumimage: "https://images.genius.com/267c9068d6767e6db3e5d15a69c5e62e.600x600x1.jpg"}
         ],
       },
     ];
