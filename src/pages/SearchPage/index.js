@@ -16,25 +16,17 @@ export default function SearchArtist() {
   let searchResult;
   function submitArtistSearch(e) {
     e.preventDefault();
-    for (let i = 0; i < artist.length; i++) {
-      if (artist[i].name == searchTerm) {
-        searchResult = true;
-        console.log(artist[i].name);
-        // searchResult = <div className='card mx-auto my-3 p-2 mainCard shadow'> {artist[i].name} </div>
-        setRerender(!rerender);
-      }
-    }
-    console.log(searchResult);
   }
 
   function handleSearchTerm(e) {
     setSearchTerm(e.target.value);
   }
 
+
   const renderArtists = () =>
     artist.map((artist) => (
       <>
-        {artist.name == searchTerm && (
+        {artist.name.toLowerCase() == searchTerm.toLowerCase() && (
           <>
             <div className="card mx-auto my-3 p-2 mainCard shadow ">
               <Image
