@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 // todo: should use useEffect and useRef in project somehow
 import Modal from "./modal/Modal";
 const axios = require("axios").default;
@@ -6,7 +6,7 @@ const axios = require("axios").default;
 const SongCard = ({ songName, song, name, releasedate, songimage, yturl }) => {
   const [lyrics, setLyrics] = useState("");
   const [show, setShow] = useState(false);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const songNameUrl = songName.replace(/ /g, "%20");
   const artistNameUrl = name.replace(/ /g, "%20");
 
@@ -14,16 +14,20 @@ const SongCard = ({ songName, song, name, releasedate, songimage, yturl }) => {
     try {
       setLoading(true);
       const url = `https://api.lyrics.ovh/v1/${artistNameUrl}/${songNameUrl}`;
-      let cancel
-      axios.get(url, {
-        cancelToken: new axios.CancelToken(c => cancel = c)
-      }).then(res => {
-        setLoading(false)
-      setLyrics(res.data.lyrics);
-      });
+      let cancel;
+      axios
+        .get(url, {
+          cancelToken: new axios.CancelToken((c) => (cancel = c)),
+        })
+        .then((res) => {
+          setLoading(false);
+          setLyrics(res.data.lyrics);
+        });
     } catch (error) {
       console.error(error);
-      setLyrics("❌ Loading Error ❌ (The API can take a long time to get the lyrics)");
+      setLyrics(
+        "❌ Loading Error ❌ (The API can take a long time to get the lyrics)"
+      );
     }
   }
 
@@ -31,7 +35,6 @@ const SongCard = ({ songName, song, name, releasedate, songimage, yturl }) => {
     setShow(true);
     await getLyrics();
   }
-
 
   return (
     <div className="card justify-center">

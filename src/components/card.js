@@ -7,22 +7,20 @@ import SongCard from "./SongCard";
 import Hr from "./hr/hr";
 import { ArtistContext } from "../ArtistContext";
 import AddSongModal from "./addsongmodal/addsongmodal";
-const LOCAL_STORAGE_KEY = 'musicApp.artists'
+const LOCAL_STORAGE_KEY = "musicApp.artists";
 
 const Card = () => {
   const [artists, setArtists] = useContext(ArtistContext);
   const [song, setSong] = useState("");
 
+  useEffect(() => {
+    const storedArtists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storedArtists) setArtists(storedArtists);
+  }, []);
 
   useEffect(() => {
-    const storedArtists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    if (storedArtists) setArtists(storedArtists)
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(artists))
-  }, [artists])
-
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(artists));
+  }, [artists]);
 
   const renderArtists = () =>
     artists.map((artist) => (
@@ -56,13 +54,12 @@ const Card = () => {
             );
           })}
           <section className="container mx-auto text-center w-50">
-
-        <AddSongModal
-                          key={Math.random() * 100}
-                          name={artist.name}
-                          yturl={song.songurl}
-                          />
-                          </section>
+            <AddSongModal
+              key={Math.random() * 100}
+              name={artist.name}
+              yturl={song.songurl}
+            />
+          </section>
         </div>
         <div className="justify-content-center w-100">
           <Hr />

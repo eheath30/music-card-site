@@ -24,7 +24,7 @@ export default function SearchArtist() {
 
   const renderArtists = () =>
     artist.map((artist) => (
-        <>
+      <>
         {artist.name === searchTerm && (
           <>
             <div className="card mx-auto my-3 p-2 mainCard shadow ">
@@ -44,37 +44,36 @@ export default function SearchArtist() {
               />
 
               {artist.songs.map((song) => {
-            return (
-              <div className="mx-5 py-2">
-                <SongCard
+                return (
+                  <div className="mx-5 py-2">
+                    <SongCard
+                      key={Math.random() * 100}
+                      songName={song.name}
+                      releasedate={song.releasedate}
+                      songimage={song.albumimage}
+                      name={artist.name}
+                      yturl={song.songurl}
+                    />
+                  </div>
+                );
+              })}
+
+              <section className="container mx-auto text-center w-50">
+                <AddSongModal
                   key={Math.random() * 100}
-                  songName={song.name}
-                  releasedate={song.releasedate}
-                  songimage={song.albumimage}
                   name={artist.name}
-                  yturl={song.songurl}
+                  yturl={artist.song}
+                  rerender={rerender}
+                  setRerender={setRerender}
                 />
-              </div>
-            );
-          })}
-
-          <section className="container mx-auto text-center w-50">
-
-        <AddSongModal
-                          key={Math.random() * 100}
-                          name={artist.name}
-                          yturl={artist.song}
-                          rerender={rerender}
-                          setRerender={setRerender}
-                          />
-                          </section>
+              </section>
             </div>
             <div className="justify-content-center w-100">
               <Hr />
             </div>
           </>
         )}
-        </>
+      </>
     ));
 
   return (
