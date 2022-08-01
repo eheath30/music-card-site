@@ -3,6 +3,7 @@ import React, {createContext, useState} from 'react';
 
     const artistsData = [
       {
+        id: 1,
         artistimage: "https://www.dailynews.com/wp-content/uploads/2020/03/LDN-L-INTHEEND-0313-02-1.jpg?w=620",
         name: "Linkin Park",
         genre: "pop-rock",
@@ -18,6 +19,7 @@ import React, {createContext, useState} from 'react';
       },
 
       {
+        id: 2,
         artistimage: "https://www.ibtimes.com/sites/www.ibtimes.com/files/styles/embed/public/2018/05/03/donald-glover.jpg",
         name: "Donald Glover",
         genre: "rap",
@@ -31,6 +33,7 @@ import React, {createContext, useState} from 'react';
         ],
       },
       {
+        id: 3,
         artistimage: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Axwell_Ingrosso_Live.png",
         name: "Axwell & Ingrosso",
         genre: "Electro house",
@@ -44,6 +47,7 @@ import React, {createContext, useState} from 'react';
         ],
       },
       {
+        id: 4,
         artistimage: "https://www.gannett-cdn.com/presto/2019/08/02/PDTN/870e01ae-9339-48a1-af27-578f794ad7f2-sheeran-ed.jpg?crop=3634,2045,x0,y168&width=3200&height=1680&fit=bounds",
         name: "Ed Sheeran",
         genre: "Pop",

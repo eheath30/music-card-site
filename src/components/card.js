@@ -13,6 +13,7 @@ const Card = () => {
   const [artists, setArtists] = useContext(ArtistContext);
   const [song, setSong] = useState("");
 
+
   useEffect(() => {
     const storedArtists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     if (storedArtists) setArtists(storedArtists)
@@ -26,7 +27,7 @@ const Card = () => {
   const renderArtists = () =>
     artists.map((artist) => (
       <>
-        <div className="card mx-auto my-3 p-2 mainCard shadow ">
+        <div id={artist.id} className="card mx-auto my-3 p-2 mainCard shadow ">
           <Image
             key={Math.random() * 100}
             alt={artist.name}
@@ -36,6 +37,7 @@ const Card = () => {
             key={Math.random() * 100}
             name={artist.name}
             genre={artist.genre}
+            artist={artist}
           />
           <Main key={Math.random() * 100} description={artist.description} />
 

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { ArtistContext } from '../../ArtistContext';
 
 
-export default function AddSongModal({name}) {
+export default function AddSongModal({name, key}) {
   const [show, setShow] = useState(false);
   const [ songName, setSongName ] = useState('');
   const [ ReleaseDate, setReleaseDate ] = useState('');
@@ -30,7 +30,6 @@ function handleYoutubeURL (e) { setYoutubeURL(e.target.value); }
 
 function handleSubmit (e) {
   e.preventDefault();
-  let artistSelected = e.target.id
 
   const newSong = {
     name: songName,
@@ -47,7 +46,7 @@ function handleSubmit (e) {
 }
 
   return (
-    <div className="card justify-center my-2">
+    <div key={key} className="card justify-center my-2">
       <button
         type="button"
         className="btn-lg btn-light mx-auto border-0 bg-light"
@@ -60,8 +59,8 @@ function handleSubmit (e) {
         id="myModal"
         className={`modal  ${show ? "showModal" : "hideModal"}`}
       >
-        <div class="modal-content addSongCard">
-          <span onClick={closeModal} class="close">
+        <div className="modal-content addSongCard">
+          <span onClick={closeModal} className="close">
             &times;
           </span>
 

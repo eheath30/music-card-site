@@ -40,7 +40,6 @@ const SongCard = ({ songName, song, name, releasedate, songimage, yturl }) => {
       <button
         type="button"
         className="mx-auto border-0 bg-light"
-        // data-toggle={show}
         data-target="#exampleModalCenter"
         onClick={handleClick}
       >

@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Hr() {
+export default function Hr({key}) {
   return (
-    <div className="line container w-50 mx-auto">
+    <div key={key} className="line container w-50 mx-auto">
     </div>
   )
 }

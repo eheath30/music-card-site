@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { ArtistContext } from '../../ArtistContext';
+const LOCAL_STORAGE_KEY = 'musicApp.artists'
 
 const NewCardPage = () => {
     const [ image, setImage ] = useState('');
@@ -7,7 +8,11 @@ const NewCardPage = () => {
     const [ genre, setGenre ] = useState('');
     const [ description, setDescription ] = useState('');
     // const [ songs, setSongs ] = useState([]);
-    const [artist, setArtist] = useContext(ArtistContext);
+    const [artists, setArtists] = useContext(ArtistContext);
+
+    useEffect(() => {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(artists))
+      }, [artists])
 
     function handleName (e) {
         setName(e.target.value);
@@ -27,8 +32,10 @@ const NewCardPage = () => {
 
     function handleSubmit (e) {
         e.preventDefault();
-        setArtist(prevArtist => [...prevArtist, {artistimage: image, name: name, genre: genre, description: description, id: (artist.length + 1), songs: []}])
+        setArtists(prevArtist => [...prevArtist, {id: (artists.length + 1), artistimage: image, name: name, genre: genre, description: description, songs: []}])
         document.getElementById("submitArtistForm").reset();
+
+
     }
 
 
