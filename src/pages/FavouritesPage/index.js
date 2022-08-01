@@ -51,13 +51,13 @@ const Saved = () => {
                     </div>
                   );
                 })}
-                <section className="container mx-auto text-center w-50">
+                {/* <section className="container mx-auto text-center w-50">
                   <AddSongModal
                     key={Math.random() * 100}
                     name={artist.name}
                     yturl={song.songurl}
                   />
-                </section>
+                </section> */}
               </div>
               <div className="justify-content-center w-100">
                 <Hr />
