@@ -3,7 +3,8 @@
 You can add artists and their songs with music videos and lyrics.
 star artists to your favourites list or search through artists.
 
-### Live site at: `https://reeces-pieces.netlify.app/`
+### Live site at: 
+https://reeces-pieces.netlify.app/
 
 ##### This project was built using ReactJS and Redux
 
