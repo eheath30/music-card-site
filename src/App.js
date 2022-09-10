@@ -11,7 +11,7 @@ const App = () => {
   return (
     <ArtistProvider>
       <Routes>
-        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout />}>
           <Route path="/" element={<IndexPage />}></Route>
           <Route path="/about" element={<AboutPage />}></Route>
           <Route path="/newcardpage" element={<NewCardPage />}></Route>

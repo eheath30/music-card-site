@@ -109,14 +109,7 @@ export default function Header() {
             </div>
           </nav>
 
-          <div className="text-end">
-            <button type="button" className="btn btn-primary me-2">
-              Login
-            </button>
-            <button type="button" className="btn btn-success">
-              Sign-up
-            </button>
-          </div>
+
         </div>
       </div>
     </header>
