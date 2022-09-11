@@ -20,7 +20,7 @@ import React, {createContext, useState} from 'react';
 
       {
         id: 2,
-        artistimage: "https://www.ibtimes.com/sites/www.ibtimes.com/files/styles/embed/public/2018/05/03/donald-glover.jpg",
+        artistimage: "https://image.cnbcfm.com/api/v1/image/105230339-DonaldGlover-GettyImages-853332536.jpg?v=1532563633",
         name: "Donald Glover",
         genre: "rap",
 
