@@ -108,6 +108,19 @@ export function MobileNavLinks(props) {
                     </NavLink>
           </LinkItem>
           <LinkItem>
+          <NavLink
+                      className={({ isActive }) =>
+                        isActive
+                        ? "selected link-primary p-2 m-2 ms-3"
+                        : "link-dark m-2 ms-3"
+                      }
+                      to="/favourites"
+                      onClick={() => setOpen(!isOpen)}
+                    >
+                      Favourites
+                    </NavLink>
+          </LinkItem>
+          <LinkItem>
           <button
                       className="btn btn-danger btn-sm my-2 ms-4"
                       onClick={() => (handleBack())}
